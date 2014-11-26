@@ -1,6 +1,18 @@
 require File.expand_path('../boot', __FILE__)
 
-require 'rails/all'
+require 'rails'
+
+%w(
+  neo4j
+  action_controller
+  action_mailer
+  sprockets
+).each do |framework|
+  begin
+    require "#{framework}/railtie"
+  rescue LoadError
+  end
+end
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -19,5 +31,13 @@ module VSC
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    config.neo4j.session_type = :server_db
+    config.neo4j.session_path = ENV['GRAPHENEDB_URL'] || 'http://localhost:7474'
+
+    #config.generators do |g|
+    #  g.orm :active_record, migration: false
+    #end
+
   end
 end
