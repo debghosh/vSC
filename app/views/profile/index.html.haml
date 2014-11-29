@@ -1,0 +1,18 @@
+%table
+  %thead
+    %th
+      Email
+    %th
+      City
+    %th
+      Zip
+
+  %tbody
+    - @profiles.each do |profile|
+      %tr
+        %td
+          = profile.email
+        %td
+          = profile.city
+        %td
+          = profile.zip

@@ -35,6 +35,10 @@ module VSC
     config.neo4j.session_type = :server_db
     config.neo4j.session_path = ENV['GRAPHENEDB_URL'] || 'http://localhost:7474'
 
+    config.neo4j.id_property = :uuid
+    config.neo4j.id_property_type = :auto
+    config.neo4j.id_property_type_value = :uuid
+
     #config.generators do |g|
     #  g.orm :active_record, migration: false
     #end
