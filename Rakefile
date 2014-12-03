@@ -3,5 +3,6 @@
 
 require File.expand_path('../config/application', __FILE__)
 #require 'neo4j/tasks/neo4j_server'
+load 'neo4j/tasks/neo4j_server.rake'
 
 Rails.application.load_tasks
