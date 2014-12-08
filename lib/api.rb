@@ -9,4 +9,11 @@ class API < Grape::API
 
   end
 
+  resource :user_recommendation do
+    desc "Return All the user recommendation."
+    get '/:user_id', rabl: 'user_recommendation' do
+      @user_recommendations = UserRecommendation.all
+    end
+  end
+
 end

@@ -47,6 +47,7 @@ module VSC
     #config.generators do |g|
     #  g.orm :active_record, migration: false
     #end
+    config.generators { |g| g.orm :neo4j }
 
   end
 end
