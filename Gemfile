@@ -28,6 +28,11 @@ gem 'therubyracer'
 gem 'neo4j', github: 'andreasronge/neo4j'
 gem 'haml-rails'
 gem 'pry'
+gem 'grape'
+gem 'rabl-rails'
+gem 'grape-rabl'
+gem 'rack-cors', :require => 'rack/cors'
+gem 'rest-client'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
